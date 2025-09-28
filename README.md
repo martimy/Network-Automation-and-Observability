@@ -43,7 +43,16 @@ The entire lab operates on the `192.168.121.0/24` management network. The Docker
 The environment is defined in the `topology.clab.yml` file. To start the lab, you will need to have Containerlab installed.
 
 From the root of this repository, run the following command to deploy the topology:
+
 ```bash
-containerlab deploy -t topology.clab.yml
+sudo clab deploy [-t topology.clab.yml]
 ```
+
 This command will start all six router containers and connect them to create the complete two-spine, four-leaf fabric. Once deployed, you can begin the tutorial by interacting with the devices.
+
+To stop the lab, run the following command:
+
+
+```bash
+sudo containerlab destroy [-t topology.clab.yml] [--cleanup]
+```

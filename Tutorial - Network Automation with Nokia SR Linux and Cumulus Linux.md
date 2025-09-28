@@ -1,10 +1,4 @@
----
-output: pdf_document
-geometry: margin=1in
-title: Network Automation with Nokia SR Linux and Cumulus Linux
-subtitle: Introduction
----
-
+# Network Automation with Nokia SR Linux and Cumulus Linux
 
 ## Introduction
 
@@ -17,9 +11,6 @@ Both interfaces make automation practical with CLI tools, Ansible collections, a
 [^others]: Nokia SR Linux Network OS employs three management interfaces: gNMI, JSON-RPC, and CLI. Cumulus Linux can be managed through NVUE and CLI (Linux commands).
 
 Here is a comprehensive comparison of the two interfaces:
-
-
-: Comparison of Nokia SR Linux and Cumulus Linux management interfaces
 
 
 | Criteria              | Nokia SR Linux (gNMI/YANG)                                   | Cumulus Linux (NVUE REST API)                                                                  |
@@ -75,16 +66,6 @@ Retrieve specific paths. Use XPath-like notation for YANG paths.
   gnmic -a 192.168.121.101:57400 -u admin -p NokiaSrl1! --skip-verify \
     --encoding json_ietf get --path /interface[name=ethernet-1/1]
   ```
-
-<!--
-- Get using OpenConfig:
-  
-  ```bash
-  gnmic -a 192.168.121.101:57400 -u admin -p NokiaSrl1! --skip-verify get \
-    --path /interfaces/interface[name=ethernet-1/1]/state \
-    --prefix / --encoding json
-  ```
--->
 
 Add `--type config` for config only, or `--type state` for operational data.
 
@@ -186,8 +167,10 @@ Nokia provides the `nokia.grpc` Ansible collection for gNMI operations. However,
 ansible-galaxy collection install nokia.srlinux
 ```
 
-[Ref Docs](https://learn.srlinux.dev/ansible/collection/)
-[Ref Docs](https://learn.srlinux.dev/tutorials/programmability/ansible/using-nokia-srlinux-collection/)
+**Resources:**
+
+- [SRLinux Collection](https://learn.srlinux.dev/ansible/collection/)
+- [SRLinux Tutorials](https://learn.srlinux.dev/tutorials/programmability/ansible/using-nokia-srlinux-collection/)
 
 The direct use of `gnmic` using shell commands is also possible:
 
@@ -544,5 +527,6 @@ For raw REST without the collection, use Ansible's `uri` module:
         msg: "Configuration apply status: {{ apply_result.status }}"
       when: apply_result is defined
 ```
+
 
 These integrate well with existing Ansible setups for idempotent network automation. Check the full collection docs on Galaxy for module-specific params.

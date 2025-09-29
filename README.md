@@ -16,13 +16,13 @@ Later phases will build upon this foundation to implement the unified automation
 
 This repository's first phase is a practical tutorial that explores the different automation philosophies of Nokia SR Linux (gNMI/YANG) and NVIDIA Cumulus Linux (NVUE REST API). You will learn to interact with the devices using command-line tools like `gnmic` and `curl`.
 
-➡️ You can find the full [tutorial here](Tutorial - Network Automation with Nokia SR Linux and Cumulus Linux.md).
+➡️ You can find the full [tutorial here](https://github.com/martimy/Network-Automation-and-Observability/blob/main/Tutorial%20-%20Network%20Automation%20with%20Nokia%20SR%20Linux%20and%20Cumulus%20Linux.md).
 
 ## Lab Environment Overview
 
 The lab topology consists of six routers in a classic leaf-spine architecture, deployed using Containerlab.
 
-<img src="topology.png" width="640">
+<img src="topology.png" width="480">
 
 
 - Two Spine Routers (`spine1`, `spine2`):

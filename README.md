@@ -22,7 +22,8 @@ This repository's first phase is a practical tutorial that explores the differen
 
 The lab topology consists of six routers in a classic leaf-spine architecture, deployed using Containerlab.
 
-![Topolog](topology.png)
+<img src="topology.png" width="640">
+
 
 - Two Spine Routers (`spine1`, `spine2`):
   - NOS: Nokia SR Linux (v25.3.3).

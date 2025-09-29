@@ -6,23 +6,23 @@ In the evolving landscape of network operations, automation has become essential
 
 This tutorial introduces two prominent examples of such interfaces: the gNMI (gRPC Network Management Interface) with YANG data models in Nokia's SR Linux, and the NVUE (NVIDIA User Experience) REST API in NVIDIA's Cumulus Linux[^others]. This tutorial illustrates practical approaches to automation using command-line tools like gnmic and curl, as well as Ansible for structured workflows. 
 
-Both interfaces make automation practical with CLI tools, Ansible collections, and secure transport. gNMI/YANG emphasizes standards, interoperability, and scalability, making it ideal for heterogeneous or large networks. NVUE REST API, by contrast, provides a simpler, Linux-centric workflow that aligns well with Cumulus environments but offers less flexibility in multi-vendor scenarios.
+Both interfaces make automation practical with CLI tools, Ansible collections, and secure transport. gNMI/YANG emphasizes standards, interoperability, and scalability, making it ideal for heterogeneous or large networks. NVUE REST API, by contrast, provides a simpler, Linux-centric workflow that aligns well with programmable environments.
 
 [^others]: Nokia SR Linux Network OS employs three management interfaces: gNMI, JSON-RPC, and CLI. Cumulus Linux can be managed through NVUE and CLI (Linux commands).
 
-Here is a comprehensive comparison of the two interfaces:
+Here is a brief comparison of the two interfaces:
 
 
-| Criteria              | Nokia SR Linux (gNMI/YANG)                                   | Cumulus Linux (NVUE REST API)                                                                  |
+| Criteria | Nokia SR Linux (gNMI/YANG) | Cumulus Linux (NVUE REST API) |
 |---|-----|-----|
-| **Protocol**        | gRPC on TCP/57400, efficient streaming and multiplexing      | REST over HTTP/HTTPS/8765, simple but polling-based                                            |
-| **Data Models**     | IETF-standard YANG, supports OpenConfig for interoperability | Custom model via OpenAPI v3.0.2, tailored to Cumulus ecosystem                                 |
-| **Configuration**   | Fully model-driven, JSON/YAML payloads, fine-grained paths   | Declarative API that generates configs for subsystems (FRR, ifupdown), enforces “no backdoors” |
-| **Change Handling** | Atomic by default                                            | Revision-based staging, apply/save process                                                     |
-| **Monitoring**      | Native streaming telemetry (`Subscribe`)                     | State retrieval via GET, telemetry available via gNMI add-ons                                  |
-| **Tools**         | CLI (gnmic), Ansible (`nokia.grpc`), OpenConfig collectors   | CLI (curl), Ansible (`nvidia.nvue`), REST client libraries                                     |
-| **Ecosystem**   | Multi-vendor standards, widely adopted in industry           | Linux/cloud-centric, less compatible with YANG-based tools                                     |
-| **Suitable For** | Large-scale orchestration, real-time telemetry               | Simplicity for Linux admins, straightforward automation                                        |
+| **Protocol**        | gRPC on TCP/57400 | REST over HTTP/HTTPS/8765 |
+| **Data Models**     | IETF-standard YANG, OpenConfig for interoperability | Custom model via OpenAPI v3.0.2, tailored to Cumulus ecosystem |
+| **Configuration**   | Fully model-driven, JSON/YAML payloads   | Declarative API that generates configs for subsystems |
+| **Change Handling** | Atomic by default | Revision-based staging, apply/save process |
+| **Monitoring**      | Native streaming telemetry | State retrieval via polling, telemetry available via gNMI add-ons |
+| **Tools**         | CLI (gnmic), Ansible, OpenConfig collectors   | CLI (curl), Ansible, REST client libraries |
+| **Ecosystem**   | Multi-vendor standards, widely adopted in industry | Linux/cloud-centric, less compatible with YANG-based tools |
+| **Suitable For** | Large-scale orchestration, real-time telemetry | Simplicity for Linux admins, straightforward automation |
 
 
 ## Configuring Nokia SR Linux using gNMI/YANG
@@ -534,4 +534,5 @@ For raw REST without the collection, use Ansible's `uri` module:
 
 
 These integrate well with existing Ansible setups for idempotent network automation. Check the full collection docs on Galaxy for module-specific params.
+
 

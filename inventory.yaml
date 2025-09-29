@@ -1,0 +1,78 @@
+# inventory.yml
+all:
+  children:
+    nokia_switches:
+      hosts:
+        spine1:
+          ansible_host: 192.168.121.101
+        spine2:
+          ansible_host: 192.168.121.102
+      vars:
+        ansible_user: admin
+        ansible_password: NokiaSrl1!
+        ansible_connection: httpapi
+        ansible_network_os: nokia.srlinux.srlinux
+#        ansible_httpapi_use_ssl: true
+#        ansible_httpapi_validate_certs: false
+
+    cumulus_switches:
+      hosts:
+        leaf01:
+          ansible_host: 192.168.121.111
+          loopback_ip: 10.255.255.1/32
+          asn: 65001
+          spine_interfaces:
+            - swp1  # Connected to spine01
+            - swp2  # Connected to spine02
+        leaf02:
+          ansible_host: 192.168.121.112
+          loopback_ip: 10.255.255.2/32
+          asn: 65002
+          spine_interfaces:
+            - swp1  # Connected to spine01
+            - swp2  # Connected to spine02
+        leaf03:
+          ansible_host: 192.168.121.113
+          loopback_ip: 10.255.255.3/32
+          asn: 65003
+          spine_interfaces:
+            - swp1  # Connected to spine01
+            - swp2  # Connected to spine02
+        leaf04:
+          ansible_host: 192.168.121.114
+          loopback_ip: 10.255.255.4/32
+          asn: 65004
+          spine_interfaces:
+            - swp1  # Connected to spine01
+            - swp2  # Connected to spine02
+      vars:
+        ansible_user: cumulus
+        ansible_password: cumulus
+        #ansible_connection: ssh
+        ansible_connection: ansible.netcommon.httpapi
+        ansible_network_os: nvidia.nvue.httpapi
+        ansible_httpapi_port: 8765
+        ansible_httpapi_use_ssl: true
+        ansible_httpapi_validate_certs: false
+
+        # NVUE API settings
+        nvue_api_base_url: "https://{{ ansible_host }}:8765/nvue_v1"
+        nvue_headers:
+          Content-Type: "application/json"
+          Accept: "application/json"
+        nvue_username: cumulus
+        nvue_password: cumulus
+        # Spine router ASNs
+        spine01_asn: 65100
+        spine02_asn: 65100
+
+#    # Group containing all network devices
+#    network_devices:
+#      children:
+#        - nokia_switches
+#        - cumulus_switches
+#      vars:
+#        # Common variables for all network devices
+#        ansible_python_interpreter: /usr/bin/python3
+#        timeout: 60
+#        gather_facts: no

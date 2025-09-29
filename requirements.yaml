@@ -1,0 +1,7 @@
+# requirements.yml
+---
+collections:
+  - name: community.network
+    version: ">=4.0.0"
+  - name: ansible.netcommon
+    version: ">=2.0.0"

@@ -1,0 +1,86 @@
+# Assign lab name
+name: dcn
+prefix: ""
+
+mgmt:
+  network: netlab_mgmt
+  ipv4-subnet: 192.168.121.0/24
+  # Note: 'start' not validated
+topology:
+  nodes:
+    spine1:
+      mgmt-ipv4: 192.168.121.101
+      kind: srl
+      type: 'ixr-d1'
+      image: ghcr.io/nokia/srlinux:25.3.3
+      runtime: docker
+      group: as65100
+    spine2:
+      mgmt-ipv4: 192.168.121.102
+      kind: srl
+      type: 'ixr-d1'
+      image: ghcr.io/nokia/srlinux:25.3.3
+      runtime: docker
+      group: as65100
+    leaf1:
+      mgmt-ipv4: 192.168.121.111
+      kind: cvx
+      image: networkop/cx:5.3.0
+      runtime: docker
+      group: as65201
+      binds:
+      - cfg_files/leaf1/interfaces:/etc/network/interfaces
+      - cfg_files/-shared-hosts:/etc/hosts:ro
+    leaf2:
+      mgmt-ipv4: 192.168.121.112
+      kind: cvx
+      image: networkop/cx:5.3.0
+      runtime: docker
+      group: as65202
+      binds:
+      - cfg_files/leaf2/interfaces:/etc/network/interfaces
+      - cfg_files/-shared-hosts:/etc/hosts:ro
+    leaf3:
+      mgmt-ipv4: 192.168.121.113
+      kind: cvx
+      image: networkop/cx:5.3.0
+      runtime: docker
+      group: as65203
+      binds:
+      - cfg_files/leaf3/interfaces:/etc/network/interfaces
+      - cfg_files/-shared-hosts:/etc/hosts:ro
+    leaf4:
+      mgmt-ipv4: 192.168.121.114
+      kind: cvx
+      image: networkop/cx:5.3.0
+      runtime: docker
+      group: as65204
+      binds:
+      - cfg_files/leaf4/interfaces:/etc/network/interfaces
+      - cfg_files/-shared-hosts:/etc/hosts:ro
+
+  links:
+  - endpoints:
+    - "spine1:e1-1"
+    - "leaf1:swp1"
+  - endpoints:
+    - "spine1:e1-2"
+    - "leaf2:swp1"
+  - endpoints:
+    - "spine1:e1-3"
+    - "leaf3:swp1"
+  - endpoints:
+    - "spine1:e1-4"
+    - "leaf4:swp1"
+  - endpoints:
+    - "spine2:e1-1"
+    - "leaf1:swp2"
+  - endpoints:
+    - "spine2:e1-2"
+    - "leaf2:swp2"
+  - endpoints:
+    - "spine2:e1-3"
+    - "leaf3:swp2"
+  - endpoints:
+    - "spine2:e1-4"
+    - "leaf4:swp2"

@@ -1,4 +1,4 @@
-# Network-Automation-and-Observability
+# Network Automation and Observability
 
 This project provides a lab environment designed to demonstrate how modern automation principles can be applied in a multi-vendor network. It uses a container-based Leaf-Spine Data Center Fabric to showcase how to unify automation strategies across platforms with different capabilities, specifically Nokia SR Linux and NVIDIA Cumulus Linux.
 

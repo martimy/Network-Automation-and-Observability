@@ -16,7 +16,7 @@ Later phases will build upon this foundation to implement the unified automation
 
 This repository's first phase is a practical tutorial that explores the different automation philosophies of Nokia SR Linux (gNMI/YANG) and NVIDIA Cumulus Linux (NVUE REST API). You will learn to interact with the devices using command-line tools like `gnmic` and `curl`.
 
-➡️ You can find the full tutorial here [Tutorial - Network Automation with Nokia SR Linux and Cumulus Linux.md].
+➡️ You can find the full [tutorial here](Tutorial - Network Automation with Nokia SR Linux and Cumulus Linux.md).
 
 ## Lab Environment Overview
 

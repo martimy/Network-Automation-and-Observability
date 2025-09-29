@@ -172,6 +172,8 @@ ansible-galaxy collection install nokia.srlinux
 - [SRLinux Collection](https://learn.srlinux.dev/ansible/collection/)
 - [SRLinux Tutorials](https://learn.srlinux.dev/tutorials/programmability/ansible/using-nokia-srlinux-collection/)
 
+*Note: the following examples assume the use of the Ansible files `ansible.cfg` and `inventory.yaml` included in this repository.*
+
 The direct use of `gnmic` using shell commands is also possible:
 
 ```yaml
@@ -376,6 +378,8 @@ Available modules include:
 
 Connection uses `network_os: nvidia.nvue` in inventory or playbooks, with vars for host, username, password, and `validate_certs: false` for testing.
 
+*Note: the following examples assume the use of the Ansible files `ansible.cfg` and `inventory.yaml` included in this repository.*
+
 #### Example: Using `nvidia.nvue.command` Module
 
 This module runs NVUE commands remotely.
@@ -530,3 +534,4 @@ For raw REST without the collection, use Ansible's `uri` module:
 
 
 These integrate well with existing Ansible setups for idempotent network automation. Check the full collection docs on Galaxy for module-specific params.
+

@@ -8,7 +8,7 @@ For a detailed background on the project's motivation and the industry challenge
 
 The project will be developed and shared in phases.
 
-The initial phase serves as a hands-on introduction to the distinct management interfaces of the two network operating systems in the lab. The goal is to build foundational skills by configuring the routers directly through their programmatic interfaces before moving on to more complex, abstracted automation.
+The initial phase serves as a hands-on introduction to the distinct management interfaces of the two network operating systems in the lab. The goal is to build foundational skills by configuring the routers directly through their programmatic interfaces before moving on to more complex automation.
 
 Later phases will build upon this foundation to implement the unified automation framework, SoT integration, CI/CD pipelines, and advanced observability solutions.
 

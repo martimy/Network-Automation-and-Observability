@@ -2,7 +2,7 @@
 
 This project provides a lab environment designed to demonstrate how modern automation principles can be applied in a multi-vendor network. It uses a container-based Leaf-Spine Data Center Fabric to showcase how to unify automation strategies across platforms with different capabilities, specifically Nokia SR Linux and NVIDIA Cumulus Linux.
 
-For a detailed background on the project's motivation and the industry challenges it addresses, please see the introductory blog post at [http://adhocnode.com](http://adhocnode.com).
+For a detailed background on the project's motivation and the industry challenges it addresses, please see the introductory [blog post](http://adhocnode.com).
 
 ## Phased Rollout
 
@@ -16,7 +16,7 @@ Later phases will build upon this foundation to implement the unified automation
 
 This repository's first phase is a practical tutorial that explores the different automation philosophies of Nokia SR Linux (gNMI/YANG) and NVIDIA Cumulus Linux (NVUE REST API). You will learn to interact with the devices using command-line tools like `gnmic` and `curl`.
 
-➡️ You can find the full tutorial here: [Tutorial: Network Automation with Nokia SR Linux and Cumulus Linux](LINK_TO_LINKEDIN_POST)**
+➡️ You can find the [full tutorial here](Tutorial - Network Automation with Nokia SR Linux and Cumulus Linux.md)
 
 ## Lab Environment Overview
 

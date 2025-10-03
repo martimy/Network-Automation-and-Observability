@@ -43,6 +43,8 @@ The entire lab operates on the `192.168.121.0/24` management network. The Docker
 
 ### How to Deploy the Lab
 
+Refer to this ([tutorial](https://github.com/martimy/Network-Automation-and-Observability/blob/main/Tutorial%20-%20Lab%20Setup.md)) to learn about the lab setup.
+
 The environment is defined in the `topology.clab.yml` file. To start the lab, you will need to have Containerlab installed.
 
 From the root of this repository, run the following command to deploy the topology:

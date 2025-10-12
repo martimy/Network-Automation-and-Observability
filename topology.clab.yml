@@ -11,14 +11,14 @@ topology:
     spine1:
       mgmt-ipv4: 192.168.121.101
       kind: srl
-      type: 'ixr-d1'
+      type: 'ixr-d3l'
       image: ghcr.io/nokia/srlinux:25.3.3
       runtime: docker
       group: as65100
     spine2:
       mgmt-ipv4: 192.168.121.102
       kind: srl
-      type: 'ixr-d1'
+      type: 'ixr-d3l'
       image: ghcr.io/nokia/srlinux:25.3.3
       runtime: docker
       group: as65100

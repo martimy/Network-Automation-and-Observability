@@ -37,3 +37,7 @@ The topology file includes also startup configs.
 - Teardown when done: `sudo containerlab destroy [-t topology.clab.yml]`.
 
 Note: use `clab` as a shorthand for `containerlab` command.
+
+## Author
+
+Created by Maen Artimy - [Personal Blog](http://adhocnode.com)

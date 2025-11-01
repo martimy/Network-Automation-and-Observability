@@ -535,4 +535,7 @@ For raw REST without the collection, use Ansible's `uri` module:
 
 These integrate well with existing Ansible setups for idempotent network automation. Check the full collection docs on Galaxy for module-specific params.
 
+## Author
+
+Created by Maen Artimy - [Personal Blog](http://adhocnode.com)
 

@@ -1,0 +1,14 @@
+auto lo
+iface lo inet loopback
+
+auto mgmt
+iface mgmt
+    vrf-table auto
+
+auto eth0
+iface eth0 inet static
+    address 192.168.121.112/24
+    gateway 192.168.121.1
+    vrf mgmt
+
+source /etc/network/interfaces.d/*.intf
